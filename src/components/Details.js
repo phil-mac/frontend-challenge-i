@@ -22,18 +22,20 @@ export default(props) => {
     }
 
     return(
-      <div style={{border: '1px solid black'}}>
-        <button onClick={() => props.history.push('/projects')}>Back to Projects List</button>
+        <>
         <h3>Project Details</h3>
-        <h5>{projectDetails.id}: {projectDetails.name}</h5>
-        <p>{projectDetails.description}</p>
-        <h5>Actions</h5>
-        {projectDetails.actions.map((action, index) => (
-            <div key={index} style={{background:'grey', margin: '10px'}}>
-                <h6>{action.description}</h6>
-                <p>{action.notes}</p>
-            </div>
-        ))}
-      </div>
+        <button onClick={() => props.history.push('/projects')}>Back</button>
+        <div className='detailsCard'>
+            <h5>{projectDetails.id}: {projectDetails.name}</h5>
+            <p>{projectDetails.description}</p>
+            <h5>Actions</h5>
+            {projectDetails.actions.map((action, index) => (
+                <div key={index} className='actions'>
+                    <h6>{index+1}: {action.description}</h6>
+                    <p>{action.notes}</p>
+                </div>
+            ))}
+        </div>
+        </>
     )
   }

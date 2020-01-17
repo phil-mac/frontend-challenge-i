@@ -8,9 +8,10 @@ import './App.css';
 
 function App(props) {
   return (
-    <div className="App">
+    <div className="App" >
       <header className="App-header">
         <h1>Projects & Actions Sprint Challenge</h1>
+        <hr/>
         <Route exact path='/projects' component={ProjectList}/>
         <Route path='/projects/:id' component={Details}/>
       </header>

@@ -28,7 +28,7 @@ export default(props) => {
       <div>
         <h3>Projects List</h3>
         {projects.map((project, index) => (
-            <div onClick={() => openDetails(project.id)} key={index} style={{background:'grey', margin: '10px'}}>
+            <div onClick={() => openDetails(project.id)} key={index} className='project'>
                 <h3>{project.id}: {project.name}</h3>
                 <p>{project.description}</p>
             </div>
